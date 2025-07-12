@@ -75,13 +75,13 @@
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
 
         <header class="text-center my-16 fade-in-section">
-            <h1 class="text-4xl md:text-6xl font-bold text-[#333333] mb-4">
+            <h1 class="text-4xl md:text-7xl font-bold text-[#333333] mb-4">
                 The Logic of the Ride
             </h1>
-            <p class="text-lg md:text-xl text-[#555]">
+            <p class="text-lg md:text-3xl text-[#555]">
                 Understanding Via's 'System-First' Algorithm
             </p>
-            <p class="text-base md:text-lg text-[#777] mt-2">
+            <p class="text-base md:text-3xl text-[#777] mt-2">
                 A Research by Mohammed Majdi Alyahia
             </p>
         </header>
