@@ -244,8 +244,23 @@
             <p class="max-w-3xl mx-auto text-gray-600">
                 Every ride assignment from Via is a calculated decision aimed at creating a more efficient, reliable, and sustainable transit system for everyone. It's a continuous, real-time optimization that balances the needs of individual riders with the health of the entire network.
             </p>
-        </footer>
-
+<footer class="text-center mt-32 pt-12 border-t border-gray-200 fade-in-section">
+    <h2 class="text-3xl font-bold mb-4">
+        Intelligence in Motion
+    </h2>
+    <p class="max-w-3xl mx-auto text-gray-600">
+        Every ride assignment from Via is a calculated decision aimed at creating a more efficient, reliable, and sustainable transit system for everyone. It's a continuous, real-time optimization that balances the needs of individual riders with the health of the entire network.
+    </p>
+    <button 
+      onclick="window.open('https://forms.gle/W1ExCCKkpurFKqsp9')" 
+      class="mt-10 bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg shadow-lg transition-all text-lg flex items-center justify-center gap-2"
+    >
+      <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M8 10h.01M12 10h.01M16 10h.01M21 12c0 3.866-3.582 7-8 7a8.966 8.966 0 0 1-4.9-1.467L3 19l1.528-3.43A6.978 6.978 0 0 1 3 12c0-3.866 3.582-7 8-7s8 3.134 8 7z" />
+      </svg>
+      Give me your feedback
+    </button>
+</footer>
     </div>
 
 <script>
