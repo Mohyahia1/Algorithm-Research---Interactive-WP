@@ -12,64 +12,63 @@
 </script>
   <title>Algorithm-Research---Interactive-WP</title>
   <!-- other head content -->
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Chosen Palette: Calm Harmony -->
-    <!-- Application Structure Plan: A single-page, "scrollytelling" application. The structure is designed to guide the user from high-level concepts to specific, interactive examples. It starts with the core idea (System-First Optimization), visualizes the algorithm's competing goals and its "brain" (The Cost Function), and then lets users engage with two interactive scenarios that directly answer the core user questions. This thematic, interactive flow is more intuitive for learning than a traditional report layout, transforming passive reading into active exploration and understanding. -->
-    <!-- Visualization & Content Choices: 
-        - Report Info: Multi-objective optimization (utilization, wait times, costs). Goal: Inform/Compare. Viz: Interactive HTML diagram with hover effects showing conflicting goals. Interaction: Hover to see trade-offs. Justification: Makes an abstract concept tangible. Method: HTML/CSS/JS.
-        - Report Info: Cost function components and their changing priorities. Goal: Inform/Organize. Viz: Dynamic Chart.js Bar Chart. Interaction: A button toggles the chart between 'Standard' and 'High Demand' modes to see how priorities shift. Justification: Quantifies priorities and shows the system's adaptability. Method: Chart.js.
-        - Report Info: Scenario 1 (Utilized vs. Empty Van). Goal: Explain a complex process visually. Viz: Animated map-like simulation. Interaction: User-triggered animation with tooltips explaining vehicle status (e.g., "Rebalancing for future demand"). Justification: A visual story is more effective than text for this spatial logic. Method: HTML/CSS/JS.
-        - Report Info: Scenario 2 (Separate Vans for non-simultaneous requests). Goal: Show cause-and-effect over time. Viz: Two-step animated map simulation. Interaction: Staged button clicks to show how timing changes the optimal solution, with visual cues for "Constraint Violated!". Justification: Clearly demonstrates the time-sensitive, dynamic nature of the algorithm. Method: HTML/CSS/JS.
-    -->
-    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
-    <title>ViaAlgo Explainer</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
-        html { scroll-behavior: smooth; }
-        body {
-            background-color: #F8F7F4;
-            color: #333333;
-            font-family: 'Inter', sans-serif;
-        }
-        .fade-in-section {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
-        .fade-in-section.is-visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .sim-van {
-            transition: all 2s ease-in-out;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-        .sim-rider {
-            transition: all 1s ease-in-out;
-        }
-        .path-line {
-            transition: all 1.5s ease-in-out; /* Adjusted for height animation */
-        }
-        .sim-info-box {
-            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
-        }
-        .chart-container { 
-            position: relative; 
-            width: 100%; 
-            max-width: 600px; 
-            margin-left: auto; 
-            margin-right: auto; 
-            height: 300px;
-            max-height: 400px; 
-        }
-        @media (min-width: 768px) { 
-            .chart-container { height: 350px; } 
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Chosen Palette: Calm Harmony -->
+  <!-- Application Structure Plan: A single-page, "scrollytelling" application. The structure is designed to guide the user from high-level concepts to specific, interactive examples. It starts with the core idea (System-First Optimization), visualizes the algorithm's competing goals and its "brain" (The Cost Function), and then lets users engage with two interactive scenarios that directly answer the core user questions. This thematic, interactive flow is more intuitive for learning than a traditional report layout, transforming passive reading into active exploration and understanding. -->
+  <!-- Visualization & Content Choices: 
+      - Report Info: Multi-objective optimization (utilization, wait times, costs). Goal: Inform/Compare. Viz: Interactive HTML diagram with hover effects showing conflicting goals. Interaction: Hover to see trade-offs. Justification: Makes an abstract concept tangible. Method: HTML/CSS/JS.
+      - Report Info: Cost function components and their changing priorities. Goal: Inform/Organize. Viz: Dynamic Chart.js Bar Chart. Interaction: A button toggles the chart between 'Standard' and 'High Demand' modes to see how priorities shift. Justification: Quantifies priorities and shows the system's adaptability. Method: Chart.js.
+      - Report Info: Scenario 1 (Utilized vs. Empty Van). Goal: Explain a complex process visually. Viz: Animated map-like simulation. Interaction: User-triggered animation with tooltips explaining vehicle status (e.g., "Rebalancing for future demand"). Justification: A visual story is more effective than text for this spatial logic. Method: HTML/CSS/JS.
+      - Report Info: Scenario 2 (Separate Vans for non-simultaneous requests). Goal: Show cause-and-effect over time. Viz: Two-step animated map simulation. Interaction: Staged button clicks to show how timing changes the optimal solution, with visual cues for "Constraint Violated!". Justification: Clearly demonstrates the time-sensitive, dynamic nature of the algorithm. Method: HTML/CSS/JS.
+  -->
+  <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+  <title>ViaAlgo Explainer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+      html { scroll-behavior: smooth; }
+      body {
+          background-color: #F8F7F4;
+          color: #333333;
+          font-family: 'Inter', sans-serif;
+      }
+      .fade-in-section {
+          opacity: 0;
+          transform: translateY(20px);
+          transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+      }
+      .fade-in-section.is-visible {
+          opacity: 1;
+          transform: translateY(0);
+      }
+      .sim-van {
+          transition: all 2s ease-in-out;
+          box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      }
+      .sim-rider {
+          transition: all 1s ease-in-out;
+      }
+      .path-line {
+          transition: all 1.5s ease-in-out; /* Adjusted for height animation */
+      }
+      .sim-info-box {
+          transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+      }
+      .chart-container { 
+          position: relative; 
+          width: 100%; 
+          max-width: 600px; 
+          margin-left: auto; 
+          margin-right: auto; 
+          height: 300px;
+          max-height: 400px; 
+      }
+      @media (min-width: 768px) { 
+          .chart-container { height: 350px; } 
+      }
+  </style>
 </head>
 <body class="antialiased">
 
@@ -244,15 +243,15 @@
             <p class="max-w-3xl mx-auto text-gray-600">
                 Every ride assignment from Via is a calculated decision aimed at creating a more efficient, reliable, and sustainable transit system for everyone. It's a continuous, real-time optimization that balances the needs of individual riders with the health of the entire network.
             </p>
-    <button 
-      onclick="window.open('https://forms.gle/W1ExCCKkpurFKqsp9')" 
-      class="mt-10 bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg shadow-lg transition-all text-lg flex items-center justify-center gap-2"
-    >
-      <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M8 10h.01M12 10h.01M16 10h.01M21 12c0 3.866-3.582 7-8 7a8.966 8.966 0 0 1-4.9-1.467L3 19l1.528-3.43A6.978 6.978 0 0 1 3 12c0-3.866 3.582-7 8-7s8 3.134 8 7z" />
-      </svg>
-      Give me your feedback
-    </button>
+            <button 
+              onclick="window.open('https://forms.gle/W1ExCCKkpurFKqsp9')" 
+              class="mt-10 bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg shadow-lg transition-all text-lg flex items-center justify-center gap-2"
+            >
+              <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8 10h.01M12 10h.01M16 10h.01M21 12c0 3.866-3.582 7-8 7a8.966 8.966 0 0 1-4.9-1.467L3 19l1.528-3.43A6.978 6.978 0 0 1 3 12c0-3.866 3.582-7 8-7s8 3.134 8 7z" />
+              </svg>
+              Give me your feedback
+            </button>
         </footer>
 
     </div>
